@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/alisStyle.css" /> 
+    <style>
+
+
+/* The animation code */
+@keyframes breathing {
+  0%   {transform:scale(100%)}
+  
+  50%  {transform:scale(15%)}
+  
+  100% {transform:scale(100%)}
+}
+
+
+        #breath {
+            width:500px;
+            height:500px;
+            background:black;
+            border-radius:250px;
+
+            animation-name: breathing;
+             animation-duration: 4s;
+             animation-iteration-count:infinite;
+             animation-timing-function: ease-in;
+        }
+
+
+        </style>
+
+</head>
+<body>
+
+
+    <div id="breath"></div>
+    add something here.
+    <h1>Welcome to Ali's Home on the local internet</h1>
+
+    <p>
+        You can read my rendition of Olia Lialina's classic essay, Turing Complete User, if you <a href="TCU.html">click here</a>.
+    </p>
+
+    <img src="myPics/fred.jpg" />
+    <p>
+        Here's a picture of me from last year.
+    </p>
+
+
+        <!--
+            1. make a new page
+            2. on the new page, link to the essay
+            3. on the essay, link to the new page
+            4. on the new page add a LOCAL image
+
+
+        -->
+
+
+</body>
+</html>
