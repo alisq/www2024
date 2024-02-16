@@ -1,0 +1,26 @@
+* {
+    box-sizing:border-box;
+}
+
+body, html {
+    margin:0;
+}
+
+
+.slide {
+    width:100vw;
+    min-height:90vh;
+    background:rgb(167, 166, 166);
+    border:10px solid white;
+    padding:2em;
+}
+
+.slide-content {
+    max-width:1200px;
+    margin:auto;
+}
+
+.two-columns {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
