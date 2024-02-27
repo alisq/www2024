@@ -1,0 +1,22 @@
+body {
+    height:50000px;
+}
+
+
+img {
+    max-width:100%;
+}
+#menu {
+    position:fixed;
+    width:300px;
+    background:red;
+}
+
+
+
+#content {
+    
+    margin-left:300px;
+    display:grid;
+    grid-template-columns:300px 1fr;
+}
