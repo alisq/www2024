@@ -1,0 +1,38 @@
+* {
+    box-sizing:border-box;
+}
+
+.main-carousel {
+    width:1250px;
+    padding:50px;
+    /* width:1200px; */
+    /* overflow:hidden; */
+    
+}
+
+.card {
+    width:400px;
+    height:600px;
+    border:1px solid #000;
+    background:white;
+    box-shadow: 5px 5px 0px 1px #000000;
+    padding:50px;
+    text-align:center;
+    margin-right:-60px;
+    
+    
+    
+}
+
+.card:nth-child(odd) {
+    top:20px;
+}
+
+
+.card.is-selected {
+    z-index:9999;
+}
+
+.flickity-viewport {
+    overflow:visible;
+}
