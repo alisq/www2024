@@ -35,7 +35,8 @@
   }
 
   body {
-    font-family:'Standard'
+    font-family:'Standard';
+    transition:background 2s;
   }
 
 h1 {
@@ -63,6 +64,10 @@ h1 {
   h3:hover {
     color:rgba(0,0,0,0.5)
   }
+
+.blueBG {
+  background:blue;
+}
 
 .circle {
     width:50px; height:50px;
