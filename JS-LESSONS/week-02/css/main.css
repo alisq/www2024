@@ -1,14 +1,14 @@
 * {
-    cursor: crosshair;
-    box-sizing: border-box;
     box-sizing:border-box;
     clear:all;
     padding:0;
     margin:0;
-}
+        
+    }
 
 body {
     min-height:100vh;
+    font-size:30px;
 }
 
 .circle {
@@ -19,16 +19,90 @@ body {
     
     transition:transform 0.4s;
     position:fixed;
-    cursor:crosshair;
-}
-
-#cursor_circle {
     
 }
 
-#cursor_circle:active {
-    border:1px solid #000;
-    background:transparent;
+#cursor_circle {
+    top:50px;
+    right:50px;
+}
+
+#click_circle {
+    top:50px;
+    right:150px;
 }
 
 
+
+
+#show_hide {
+    margin:50px;
+
+}
+
+#show_hide .bw,
+#show_hide .wb {
+    border:3px solid #000;
+    width:500px;
+    
+    padding: 1em;
+    
+}
+
+#show_hide .wb {
+    color:white;
+    background:black;
+    transition:all 0.2s;
+}
+
+#show_hide .wb:hover {
+    opacity:0;
+}
+
+#scroll {
+    width:400px;
+    height:500px;
+    /* background:black;
+    color:white; */
+    border:3px solid #000;
+    padding:1em;
+    position:fixed;
+    top:150px;
+    right:50px;
+    
+}
+
+#checkboxes {
+    margin:50px;
+}
+
+
+#keypress {
+    width:400px;
+    height:500px;
+    background:black;
+    color:white;
+    
+    padding:1em;
+    margin:50px;
+    
+}
+
+#drag, #drop {
+    width:150px;
+    height:150px;
+    background:black;
+    color:white;
+    padding:1em;
+    margin:50px;
+    display:inline-block
+}
+
+#drag { border-radius:50%; }
+
+
+
+
+p {
+    margin-bottom:0.5em;
+}
