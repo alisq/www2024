@@ -38,6 +38,12 @@ $(".select").click(function(){
 })
 
 
+$("#drop").hover(function(){
+    $(".drop_caption").addClass("hovered")
+}, function(){
+    $(".drop_caption").removeClass("hovered")
+})
+
 
 let written = "";
 $(document).keyup(function(event){

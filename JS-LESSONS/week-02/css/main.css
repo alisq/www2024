@@ -160,6 +160,14 @@ body {
     background:green;
 }
 
+.drop_caption {
+    display:none;
+}
+
+.drop_caption.hovered {
+    display:block;
+}
+
 
 
 p {
