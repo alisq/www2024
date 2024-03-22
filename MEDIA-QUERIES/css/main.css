@@ -1,0 +1,43 @@
+* {
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+}
+
+body {
+    min-height:100vh;
+}
+
+
+.random-red {
+    position:fixed;
+    width:200px;
+    height:300px;
+    background:red;
+    padding:1em;
+    
+}
+
+#container {
+    width:1000px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-gap:1em;
+}
+
+.elem {
+    width:100%;
+    min-height:400px;
+    background:black
+}
+
+
+
+/*
+
+
+@media (max-width:600px) 
+
+*/
