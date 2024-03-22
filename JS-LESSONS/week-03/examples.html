@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <style>
+
+
+
+
+        body {
+            background:white;
+        }
+        * {
+            box-sizing:border-box;
+        }
+
+
+
+        .date {
+            position:fixed;
+            right:0;
+            top:0;
+            display:none;
+        }
+
+        .date.active {
+            display:block;
+        }
+
+
+        /* .spotlight{
+            background: radial-gradient(50px 50px at 100vw 100vh, transparent 0, transparent 150px, rgba(0, 0, 0, 1) 150px);
+  height: 200vh;
+  pointer-events: none;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 200vw;
+  z-index: 100000000;
+  bottom: 0px;
+  transform:translate(-50%,-50%)
+  } */
+
+
+
+
+        .cursor {
+            width:200px;
+            height:200px;
+            background:black;
+            border-radius:50%;
+            position:fixed;
+            transform:translate(-50%,-50%);
+            mix-blend-mode: difference
+        }
+        .scrollExample {
+            width:500px;
+            height:500px;
+            border:1px solid #000;
+            overflow:scroll;
+            font-size:21px;
+            padding:2em;
+        }
+
+        .gallery {
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr;
+            grid-column-gap:10px;
+            grid-row-gap:10px;
+        }
+
+        .gallery div {
+            width:100%;
+            height:200px;
+            background:black;
+        }
+
+    </style>
+</head>
+<body>
+
+    
+    <div class="date anthers-date">
+        Monday, October 56th<br />
+        23.34 hrs<br/>
+    </div>
+
+
+    <div class="date emis-date">
+        Tuesday, October 57th<br />
+        23.34 hrs<br/>
+    </div>
+
+
+    <div class="scrollExample">
+
+        <p> E Roon Kang operates Math Practice, an interdisciplinary design and research studio with interest in studying, evaluating, and criticizing everyday systems and their pursuit of efficiency. He is also a co-founder of 908A a research initiative and consultancy that focuses on constructing new design tools. </p>
+        <p> E Roon is the Chair and Associate Professor of Graphic Design at California College of the Arts. Previously, he served as the director of BFA Communication Design at Parsons School of Design, from 2017 to 2020. He was appointed as TED Senior Fellow and worked as a research fellow at SENSEable City Laboratory of MIT. </p>
+        <p> E Roon Kang operates Math Practice, an interdisciplinary design and research studio with interest in studying, evaluating, and criticizing everyday systems and their pursuit of efficiency. He is also a co-founder of 908A a research initiative and consultancy that focuses on constructing new design tools. </p>
+        <p> E Roon is the Chair and Associate Professor of Graphic Design at California College of the Arts. Previously, he served as the director of BFA Communication Design at Parsons School of Design, from 2017 to 2020. He was appointed as TED Senior Fellow and worked as a research fellow at SENSEable City Laboratory of MIT. </p>
+        
+        <p> E Roon Kang operates Math Practice, an interdisciplinary design and research studio with interest in studying, evaluating, and criticizing everyday systems and their pursuit of efficiency. He is also a co-founder of 908A a research initiative and consultancy that focuses on constructing new design tools. </p>
+        <p> E Roon is the Chair and Associate Professor of Graphic Design at California College of the Arts. Previously, he served as the director of BFA Communication Design at Parsons School of Design, from 2017 to 2020. He was appointed as TED Senior Fellow and worked as a research fellow at SENSEable City Laboratory of MIT. </p>
+        
+        <p> E Roon Kang operates Math Practice, an interdisciplinary design and research studio with interest in studying, evaluating, and criticizing everyday systems and their pursuit of efficiency. He is also a co-founder of 908A a research initiative and consultancy that focuses on constructing new design tools. </p>
+        <p> E Roon is the Chair and Associate Professor of Graphic Design at California College of the Arts. Previously, he served as the director of BFA Communication Design at Parsons School of Design, from 2017 to 2020. He was appointed as TED Senior Fellow and worked as a research fellow at SENSEable City Laboratory of MIT. </p>
+        
+        <p> E Roon Kang operates Math Practice, an interdisciplinary design and research studio with interest in studying, evaluating, and criticizing everyday systems and their pursuit of efficiency. He is also a co-founder of 908A a research initiative and consultancy that focuses on constructing new design tools. </p>
+        <p> E Roon is the Chair and Associate Professor of Graphic Design at California College of the Arts. Previously, he served as the director of BFA Communication Design at Parsons School of Design, from 2017 to 2020. He was appointed as TED Senior Fellow and worked as a research fellow at SENSEable City Laboratory of MIT. </p>
+        
+
+        <div class="gallery">
+            <div class="gallery1"></div>
+            <div class="gallery2"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </div>
+
+
+    </div>
+    <div class="spotlight"></div>
+    <div class="cursor"></div>
+
+
+        <script>
+
+
+            $(".gallery1").hover(function(){
+                $(".anthers-date").addClass("active")
+            }, function(){
+                $(".anthers-date").removeClass("active")
+            }, )
+
+
+            $(".gallery2").hover(function(){
+                $(".emis-date").addClass("active")
+            }, function(){
+                $(".emis-date").removeClass("active")
+            }, )
+
+
+            // $(document).mousemove(function(e){
+            //     $(".spotlight").css({
+            //         "top":e.clientY,
+            //         "left":e.clientX
+            //     })
+            // })
+            </script>
+</body>
+</html>

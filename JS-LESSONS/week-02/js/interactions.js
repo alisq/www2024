@@ -41,7 +41,7 @@ $(".select").click(function(){
 $("#drop").hover(function(){
     $(".drop_caption").addClass("hovered")
 }, function(){
-    $(".drop_caption").removeClass("hovered")
+    $(".drop_caption").remo veClass("hovered")
 })
 
 
