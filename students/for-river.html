@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+
+        * {
+            padding:0;
+            margin:0;
+        }
+        .container {
+            min-height:100vh;
+            transition:300ms;
+        }
+
+
+        .container.col2 {
+         
+        }
+
+        .speaker {
+            display:inline-block;
+            width:25%;
+            min-height:100vh;
+            transition:width 500ms;
+            
+        }
+
+        .container.active .speaker {
+            width:5%;
+        }
+
+        .speaker.active {
+            width:85%!important;
+        }
+
+
+
+        .speaker:nth-child(even) {
+            background:black;
+        }
+        </style>
+</head>
+<body>
+    
+    <section class="container">
+        <div class="speaker" id="speaker1"></div><div class="speaker" id="speaker2"></div><div class="speaker" id="speaker3"></div><div class="speaker" id="speaker4"></div>
+
+
+    </section>
+
+    <script>
+
+        $(".speaker").click(function(){
+            
+            
+            
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+                $(".container").removeClass("active");
+            } else {
+                $(".speaker").removeClass("active");
+                $(this).addClass("active");
+                $(".container").addClass("active");
+            }
+            
+            
+
+            
+        })
+    </script>
+</body>
+</html>
