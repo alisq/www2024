@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        
+        <!-- ADDITIONAL CODE TO ADD SVGs TO PAGES:-->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <!-- for more details see below: https://svgjs.dev/ -->
+        <style>
+
+            * {
+                box-sizing:border-box;
+                margin:0;
+                padding:0;
+            }
+            body {
+                
+                font-family:"IBM Plex Mono";
+                font-size:21px;
+
+            }
+                #rect {
+                    position:fixed;
+                    top:0;
+                    left:0;
+                }
+
+                p {
+                    width:600px;
+                    margin:30vh auto;
+                }
+
+                .title {
+                    font-size:50px;
+                    font-family: 'Times New Roman', Times, serif;
+                }
+
+                #title-rect {
+                    position:fixed;
+                    top:0;
+                    left:0;
+                }
+        </style>
+    </head>
+    <body>
+
+
+            <p>
+                It was the promise of a four-day, 33-mile canoe journey in Big Bend National Park, snaking through awe-inspiring canyons on a mighty river, that had lured me across the state. My partner’s brother, Michael Stangl, an occasional guide with Hidden Dagger Adventures, had offered to take me on the Rio Grande, one of the country’s longest rivers, which stretches from central Colorado to the Gulf of Mexico. I had only previously visited Big Bend on foot, and I was excited to see it from the water.
+            </p>
+
+            <p>
+                The moment I pulled into Michael’s driveway in Alpine, Texas, after driving there from Austin last April, he told me: We wouldn’t be going through the park anymore.
+            </p>
+            <p> 
+                “Unless you want to go hiking with a canoe, we should run a different part of the river,” he said. Having just returned from that segment of the river — between Rio Grande Village, a small campground within Big Bend, and Heath Canyon Ranch, just outside the park — he said it had been “more work than fun,” and that he had been dragging the canoe for a quarter of a mile at a time over nearly dry riverbeds.
+            </p>
+
+            <p>
+                Instead, we would be doing the Temple Canyon route: an 11-mile, two-night, three-day stretch of the Rio Grande following the United States-Mexico border, more than 30 miles from where our original trip was supposed to begin. This different river segment, entirely outside and downstream from Big Bend, was instead within a desert bighorn sheep restoration area known as Black Gap.
+            </p>
+            <p>
+Even though I was disappointed, I came to learn that last-minute changes to adventures involving the Rio Grande were common.
+</p>
+<p>
+“If the river were a heart, it would be flatlining”
+
+<p>
+The Rio Grande is in peril: Its water is being depleted by farmers and cities, while a climate-change-induced megadrought that has desiccated the American Southwest for more than two decades is threatening hopes of its recovery. In 2022, the river ran dry in Albuquerque for the first time in four decades. In the same year, the picturesque Santa Elena Canyon, one of the most popular sights in Big Bend, also ran dry for the first time in at least 15 years, according to the National Oceanic and Atmospheric Administration.
+</p>
+        
+        <script>
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            var titleRect = SVG().addTo('body').size(width, height).attr({"id":"title-rect"})
+
+            
+            inset = 20;
+            var pathData = `
+                M ${inset} ${inset}
+                L ${width - inset} ${inset}
+                L ${width - inset} ${height - inset}
+                L ${inset} ${height  - inset}
+                L ${inset} ${inset}
+                L ${width - inset} ${inset}
+                L ${width - inset} ${height - inset}
+                L ${inset} ${height  - inset}
+                Z
+            `;
+  
+            path = titleRect.path(pathData);
+    
+            path.attr({ fill: 'none', id: 'text-curve'})
+
+
+    var textpath = titleRect.textPath('Research Methods for Graphic Design');
+    textpath.attr({
+        "class":"title",
+        "href":"#text-curve",
+        "startOffset":0,
+        "style":"color:black;"
+        
+
+    })
+
+    $("text").attr({
+        "y":"150",
+         
+    })
+
+
+
+    var textCurve = document.getElementById("text-curve");
+    var l = textCurve.getTotalLength()-770;
+     
+    
+
+
+            $(document).scroll(function(){
+
+                
+                $sp = $(document).scrollTop()/($(document).height()-$(window).height())
+                $("textPath").attr("startOffset",$sp*l);
+            })
+
+        </script>
+    </body>
+</html>
