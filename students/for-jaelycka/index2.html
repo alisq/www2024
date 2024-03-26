@@ -10,15 +10,14 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
         
-        <!-- ADDITIONAL CODE TO ADD SVGs TO PAGES:-->
+        
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        <!-- for more details see below: https://svgjs.dev/ -->
+        
         <style>
 
             * {
@@ -32,32 +31,43 @@
                 font-size:21px;
 
             }
-                #rect {
-                    position:fixed;
-                    top:0;
-                    left:0;
-                }
 
                 p {
                     width:600px;
                     margin:30vh auto;
                 }
 
-                .title {
-                    font-size:50px;
-                    font-family: 'Times New Roman', Times, serif;
+              
+
+                #border_svg {
+                    position:fixed;
+                    top:0;left:0;
+                    width:100vw;
+                    height:100vh;
+                    pointer-events: none; /* this will keep the SVG from interfereing with any other interaction */
+
                 }
 
-                #title-rect {
-                    position:fixed;
-                    top:0;
-                    left:0;
+                #textPath {
+                    font-family:'Times New Roman', Times, serif
                 }
         </style>
     </head>
     <body>
 
 
+        <!-- This is the SVG which will be our border text all the javascript is mertely manipulating that -->
+        <!-- an SVG is basically just an illustrator vector graphic that the browser can render -->
+        <!-- https://www.w3schools.com/graphics/svg_intro.asp -->
+        
+        <svg id="border_svg">
+            <path d="" id="border_path" fill="none" stroke="#000"/> <!-- this will eventually be the border path that the text will travel along-->
+            <text y="40" font-size="50">
+                <textPath id="textPath" href="#border_path">Research Methods for Graphic Design</textPath><!-- this will eventually be the text that will do the travelling-->
+            </text>
+        </svg>
+
+        <!-- this is just dummy text -->
         <p> It was the promise of a four-day, 33-mile canoe journey in Big Bend National Park, snaking through awe-inspiring canyons on a mighty river, that had lured me across the state. My partner’s brother, Michael Stangl, an occasional guide with Hidden Dagger Adventures, had offered to take me on the Rio Grande, one of the country’s longest rivers, which stretches from central Colorado to the Gulf of Mexico. I had only previously visited Big Bend on foot, and I was excited to see it from the water. </p>
         <p> The moment I pulled into Michael’s driveway in Alpine, Texas, after driving there from Austin last April, he told me: We wouldn’t be going through the park anymore. </p>
         <p> “Unless you want to go hiking with a canoe, we should run a different part of the river,” he said. Having just returned from that segment of the river — between Rio Grande Village, a small campground within Big Bend, and Heath Canyon Ranch, just outside the park — he said it had been “more work than fun,” and that he had been dragging the canoe for a quarter of a mile at a time over nearly dry riverbeds. </p>
@@ -81,13 +91,23 @@
         <p> The Rio Grande is in peril: Its water is being depleted by farmers and cities, while a climate-change-induced megadrought that has desiccated the American Southwest for more than two decades is threatening hopes of its recovery. In 2022, the river ran dry in Albuquerque for the first time in four decades. In the same year, the picturesque Santa Elena Canyon, one of the most popular sights in Big Bend, also ran dry for the first time in at least 15 years, according to the National Oceanic and Atmospheric Administration. </p>
         
         <script>
-            var width = window.innerWidth;
-            var height = window.innerHeight;
-            var titleRect = SVG().addTo('body').size(width, height).attr({"id":"title-rect"})
 
+
+
+            //This is partially built from the tutorial I found here: https://www.youtube.com/watch?v=Tae96ze3xwY&ab_channel=keyframers
+            //Watch that then read through
+
+
+            // first get the width/ of the window and load them into a variables. We will use these to make sure your animation scales properly across platforms
+            let width = window.innerWidth; 
+            let height = window.innerHeight;
+    
             
-            inset = 20;
-            var pathData = `
+            inset = 50;  //this is a variable I created to change the width of the border to accommodate the text wrapping around. Chnage this number to see how it affects your animation.
+            
+            //below is a spectial type of variable called a 'string literal' it can be multiple lines and have other vars insite of it: https://www.w3schools.com/js/js_string_templates.asp
+            //this variable is writing out an SVG path that traces the window (minus the inset)
+            let pathData = ` 
                 M ${inset} ${inset}
                 L ${width - inset} ${inset}
                 L ${width - inset} ${height - inset}
@@ -98,38 +118,26 @@
                 L ${inset} ${height  - inset}
                 Z
             `;
-  
-            path = titleRect.path(pathData);
-    
-            path.attr({ fill: 'none', id: 'text-curve'})
 
-
-            var text = titleRect.text(function(add) {
-                var textpath = titleRect.textPath('Research Methods for Graphic Design');
-                textpath.attr({
-                    "class":"title",
-                    "href":"#text-curve",
-                    "startOffset":0
-                })
-            })
-
+        
             
+            //load the "path" element into a javascript variable we can manipulate
+            let textCurve = document.getElementById("border_path");
 
-   
+           //here we place that pathData variable into an attribute for the SVG above
+            textCurve.setAttribute("d", pathData)
 
+            //now we find out the precise length of the path (minus my guess on the length of the text itself)
+            let l = textCurve.getTotalLength()-770;
 
-
-    var textCurve = document.getElementById("text-curve");
-    var l = textCurve.getTotalLength()-770;
-     
-    
-
-
+            //an event to fire as a user scrolls
             $(document).scroll(function(){
 
-                
-                $sp = $(document).scrollTop()/($(document).height()-$(window).height())
-                $("textPath").attr("startOffset",$sp*l);
+                //this variable is essentially giving us a ratio between 0 and 1 depending on how far we've scrolls
+                scrollRatio = $(document).scrollTop()/($(document).height()-$(window).height())
+
+                //change the startOffset attribute of our textPath to be it's total length (l) multiplied by the ratio above (scrollRatio)
+                $("#textPath").attr("startOffset",scrollRatio*l); //TADAAAAAAAA
             })
 
         </script>
