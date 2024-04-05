@@ -10,7 +10,8 @@ body {
 
 h1 {
     font-size:200px;
-    line-height:1em
+    line-height:1em;
+    display:inline;
 }
 
 
