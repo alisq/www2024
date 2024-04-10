@@ -1,0 +1,47 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+#rows {
+    position:fixed;
+    width:100%;
+    height:100vh;
+    top:0;
+    left:0;
+}
+
+.title-row {
+    position:relative;
+    left:0;
+    width:100%;
+    height:10vh;
+    background:red;
+    border-bottom:1px solid #000;
+}
+
+
+
+.content-row {
+    height:0;
+    overflow:hidden;
+    position:relative;
+    background:black;
+    z-index:500;
+    width:100%;
+    color:white;
+
+
+}
+
+
+#footer {
+    position:fixed;
+    top:100vh;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background:purple;
+
+}
